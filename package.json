@@ -1,0 +1,26 @@
+{
+  "name": "backend_training",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbhishekPandey-successive/Backend_Training.git"
+  },
+  "keywords": [
+    "Abhi"
+  ],
+  "author": "Abhishek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbhishekPandey-successive/Backend_Training/issues"
+  },
+  "homepage": "https://github.com/AbhishekPandey-successive/Backend_Training#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "lodash": "^4.17.21"
+  }
+}

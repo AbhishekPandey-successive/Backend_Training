@@ -1,9 +1,9 @@
-const app=require('./mockData')
+const data=require('./mockData')
 const express=require('express')
-const value=express()
+const app=express()
 
-value.get('',(req,res)=>{
-    res.send(app)
+app.get('',(req,res)=>{
+    res.send(data)
 })
 
 value.listen(1500)

@@ -21,6 +21,8 @@
   "homepage": "https://github.com/AbhishekPandey-successive/Backend_Training#readme",
   "dependencies": {
     "colors": "^1.4.0",
-    "lodash": "^4.17.21"
+    "express": "^4.19.2",
+    "lodash": "^4.17.21",
+    "set-cookie-parser": "^2.6.0"
   }
 }

@@ -4,23 +4,22 @@ const express=require('express')
 const app=express();
 
 function middleware1(req,res,next){
-  res.set('Content-Type','JSON-Application')
-  next();
+    const customHeaderName = 'My-Custom-Header';
+    const customHeaderValue = 'MyCustomValue';
+
+    res.setHeader(customHeaderName, customHeaderValue);
+    
+    next();
 }
 
-function middleware2(req,res,next)
-{
-    res.set({
-        'Content-Type':'JSON-Application',
-        'Content-Length':'123',
-    })
-}
+app.use(middleware1)
 
-app.get('/',middleware1,(req,res)=>{
+
+app.get('/',(req,res)=>{
     res.send("Custom Header1 is set")
 })
 
-app.get('/user',middleware2,(req,res)=>{
+app.get('/user',(req,res)=>{
     res.send("Custom Header2 is set")
 })
 

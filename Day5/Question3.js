@@ -4,6 +4,10 @@ const express=require('express')
 const app=express();
 const rateLimit=require('express-rate-limit')
 
+const dotenv = require("dotenv");
+const env = dotenv.config().parsed;
+const PORT = process.env.PORT || 4040;
+
 app.get('/nonexistent', (req, res) => {
     res.status(404).send('Resource not found');
 });
@@ -40,6 +44,7 @@ app.get('/api',(req,res)=>{
 })
 
 
-app.listen(5600,()=>{
-    console.log("Server Running on Local Port 5600")
+
+app.listen(PORT,()=>{
+    console.log("Server started on the port", PORT)
 })

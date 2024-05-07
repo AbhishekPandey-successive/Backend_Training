@@ -3,6 +3,10 @@
 const express = require('express');
 const app = express();
 
+const dotenv = require("dotenv");
+const env = dotenv.config().parsed;
+const PORT = process.env.PORT || 4040;
+
 
 
 app.all('*',(req,res,next)=>{
@@ -28,6 +32,6 @@ app.use((error,req,res,next)=>{
 
 
 
-app.listen(5100,()=>{
-    console.log("Server is Running on the Local Port 5100")
+app.listen(PORT,()=>{
+    console.log("Server started on the port", PORT)
 })

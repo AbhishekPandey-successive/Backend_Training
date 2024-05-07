@@ -3,6 +3,10 @@
 const express = require('express');
 const app = express();
 
+const dotenv = require("dotenv");
+const env = dotenv.config().parsed;
+const PORT = process.env.PORT || 4040;
+
 
 app.use((err, req, res, next) => {
     console.error(err);
@@ -23,6 +27,11 @@ app.get('/error', async (req, res, next) => {
 
 app.listen(5700,()=>{
     console.log("Server is Running on Local Port 5700")
+})
+
+
+app.listen(PORT,()=>{
+    console.log("Server started on the port", PORT)
 })
 
 

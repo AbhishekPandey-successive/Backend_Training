@@ -25,10 +25,7 @@ app.get('/error', async (req, res, next) => {
     }
 });
 
-app.listen(5700,()=>{
-    console.log("Server is Running on Local Port 5700")
-})
-
+cd 
 
 app.listen(PORT,()=>{
     console.log("Server started on the port", PORT)

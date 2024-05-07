@@ -2,6 +2,11 @@ const express=require('express')
 const Joi=require('joi')
 const app=express()
 
+const dotenv = require("dotenv");
+const env = dotenv.config().parsed;
+const PORT = process.env.PORT || 4040;
+
+
 app.use(express.json())
 
 const requireFilter=(req,res,next)=>{
@@ -33,8 +38,9 @@ app.get('/register',requireFilter,(req,res)=>{
 
 
 
-app.listen(2400,()=>{
-    console.log("Server started on the port 2400")
+
+app.listen(PORT,()=>{
+    console.log("Server started on the port", PORT)
 })
 
 

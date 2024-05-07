@@ -5,6 +5,10 @@
 const express=require('express')
 const app=express()
 
+const dotenv = require("dotenv");
+const env = dotenv.config().parsed;
+const PORT = process.env.PORT || 4040;
+
 const validateParams = (req, res, next) => {
     
 
@@ -24,6 +28,7 @@ app.get('/user',validateParams,(req,res)=>{
 })
 
 
-app.listen(3800,()=>{
-    console.log("Server is running on local Port 3800")
-})
+
+app.listen(PORT,()=>{
+    console.log("Server started on the port", PORT)
+  })

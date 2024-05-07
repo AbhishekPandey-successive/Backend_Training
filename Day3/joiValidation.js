@@ -1,6 +1,9 @@
 const express=require('express')
 const Joi=require('joi')
 
+const dotenv = require("dotenv");
+const env = dotenv.config().parsed;
+const PORT = process.env.PORT || 4040;
 
 const app=express()
 app.use(express.json())
@@ -36,7 +39,7 @@ app.post('/signup',(req,res)=>{
 
 
 
-app.listen(2300,()=>{
-    console.log("Server started on the port 2300")
+app.listen(PORT,()=>{
+    console.log("Server started on the port", PORT)
 })
 

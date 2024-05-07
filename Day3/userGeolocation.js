@@ -5,6 +5,10 @@ const express = require("express");
 
 const app = express();
 
+const dotenv = require("dotenv");
+const env = dotenv.config().parsed;
+const PORT = process.env.PORT || 4040;
+
 
 
 const unirest = require("unirest");
@@ -43,4 +47,6 @@ app.get("/", (req, res) => {
 
 
 
-app.listen(3600, () => console.log('Example app listening on port 3600'))
+app.listen(PORT,()=>{
+  console.log("Server started on the port", PORT)
+})

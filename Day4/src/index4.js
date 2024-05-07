@@ -3,6 +3,11 @@
 const express=require('express')
 const app = express();
 
+
+const dotenv = require("dotenv");
+const env = dotenv.config().parsed;
+const PORT = process.env.PORT || 4040;
+
 function m1(req, res, next) {
         console.log("middleware 1");
         next();
@@ -22,6 +27,7 @@ const combined = [m1, m2,m3];
 
 app.get("/", combined, (req, res) => res.send("Hello world!"));
 
-app.listen(4300,()=>{
-    console.log("Server started at Local Port 4300")
-})
+
+app.listen(PORT,()=>{
+        console.log("Server started on the port", PORT)
+    })

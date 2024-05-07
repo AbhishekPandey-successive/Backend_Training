@@ -4,6 +4,10 @@
 const express=require('express')
 const app=require()
 
+const dotenv = require("dotenv");
+const env = dotenv.config().parsed;
+const PORT = process.env.PORT || 4040;
+
 
 const requiredFilter=(err,req,res,next)=>{
 
@@ -19,6 +23,7 @@ app.get('/error',requiredFilter,(req,res)=>{
     throw new Error("Something Went wrong")
 })
 
-app.listen(4200,()=>{
-    console.log("Server Starting at Local Port 4200")
+
+app.listen(PORT,()=>{
+    console.log("Server started on the port", PORT)
 })

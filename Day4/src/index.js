@@ -1,10 +1,14 @@
 const express=require('express')
 
+const dotenv = require("dotenv");
+const env = dotenv.config().parsed;
+const PORT = process.env.PORT || 4040;
+
 const userRouter = require('./routes/userRoutes')
 const app=express()
 
 app.use('/users',userRouter)
 
-app.listen(3900,()=>{
-    console.log("Server Starting at Local Port 3900")
+app.listen(PORT,()=>{
+    console.log("Server started on the port", PORT)
 })

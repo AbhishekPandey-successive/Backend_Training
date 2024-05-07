@@ -4,6 +4,10 @@ const express=require('express')
 const app=express()
 const rateLimit=require('express-rate-limit')
 
+const dotenv = require("dotenv");
+const env = dotenv.config().parsed;
+const PORT = process.env.PORT || 4040;
+
 const rateLimitMiddleware=rateLimit({
     windows:60*1000,
     max:5,
@@ -19,4 +23,8 @@ app.get('/api',(req,res)=>{
 
 app.listen(4600,()=>{
     console.log("Server Running on LOcal Port 4600")
+})
+
+app.listen(PORT,()=>{
+    console.log("Server started on the port", PORT)
 })

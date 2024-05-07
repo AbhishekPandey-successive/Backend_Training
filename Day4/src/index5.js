@@ -3,6 +3,10 @@
 const express=require('express')
 const app=express();
 
+const dotenv = require("dotenv");
+const env = dotenv.config().parsed;
+const PORT = process.env.PORT || 4040;
+
 function middleware1(req,res,next){
     const customHeaderName = 'My-Custom-Header';
     const customHeaderValue = 'MyCustomValue';
@@ -23,6 +27,7 @@ app.get('/user',(req,res)=>{
     res.send("Custom Header2 is set")
 })
 
-app.listen(4400,()=>{
-    console.log("Server is Running on the Local Port 4400")
+
+app.listen(PORT,()=>{
+    console.log("Server started on the port", PORT)
 })

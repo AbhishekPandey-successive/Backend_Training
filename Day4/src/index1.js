@@ -4,6 +4,10 @@ const express=require('express')
 const jwt=require('jsonwebtoken')
 const SECRET_KEY="Abhi@123"
 
+const dotenv = require("dotenv");
+const env = dotenv.config().parsed;
+const PORT = process.env.PORT || 4040;
+
 const app=express()
 
 app.post('/login',(req,res)=>{
@@ -66,6 +70,6 @@ function verifyToken(req,res,next)
 
 
 
-app.listen(4000,()=>{
-    console.log("app is running on 4000 port")
+app.listen(PORT,()=>{
+    console.log("Server started on the port", PORT)
 })

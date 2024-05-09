@@ -22,7 +22,16 @@
   "dependencies": {
     "colors": "^1.4.0",
     "express": "^4.19.2",
+    "joi": "^17.13.1",
+    "jsonwebtoken": "^9.0.2",
     "lodash": "^4.17.21",
-    "set-cookie-parser": "^2.6.0"
+    "mongodb": "^6.6.1",
+    "mongoose": "^8.3.4",
+    "set-cookie-parser": "^2.6.0",
+    "unirest": "^0.6.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "typescript": "^5.4.5"
   }
 }

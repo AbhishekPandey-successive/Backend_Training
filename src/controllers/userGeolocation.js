@@ -1,12 +1,18 @@
-const unirest = require('unirest')
+// const unirest = require('unirest')
 
-class Geolocation{
+import unirest from 'unirest'
+
+export class Geolocation{
+ 
+    getApiCall()
+    {
+        return unirest("GET",
+
+        "https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/"
     
-    apicall=unirest("GET",
+        )
+    }
 
-    "https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/"
-
-    )
+    
 }
 
-module.exports=Geolocation

@@ -1,11 +1,13 @@
 
-class ValidationService {
-    validateAge(age) {
-      if (!age || isNaN(age)) {
-        throw new Error('Invalid value for parameter');
-      }
-    }
+ export class ValidationService {
+
+    queryValidate(req, res){
+      
+    res.send("Query Verified")
+     
+
   }
+}
   
-  module.exports = ValidationService;
+
   

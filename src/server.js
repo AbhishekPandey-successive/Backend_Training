@@ -2,8 +2,6 @@ import express from 'express'
 
 import router from './router.js'
 
-import bodyParser from 'body-parser';
-
 const port= 8080;
 
 class Server{

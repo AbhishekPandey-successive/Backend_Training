@@ -1,10 +1,29 @@
-const queryValidation=(req,res,next)=>{
-    const age=req.query.age
-    if(!age || isNaN(age))
-    {
-       res.status(400).send("Invalid Value of Parameter")
-    }
-    next()
- }
 
- export {queryValidation}
+import Joi from 'joi'
+
+ const userSchema=Joi.object({
+    
+    age:Joi.number().required()
+  
+    
+})
+
+
+
+const QueryValidation=(req,res,next)=>{
+   const {error,value}= userSchema.validate(req.query.params)
+    if(error){
+       res.status(400).send(error)
+    }
+  next()
+}
+
+
+
+
+
+
+export {QueryValidation}
+
+
+

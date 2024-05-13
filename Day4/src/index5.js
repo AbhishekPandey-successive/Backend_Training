@@ -1,9 +1,11 @@
 // Build middleware that adds a custom header to every response. Allow the header value to be configurable.
 
-const express=require('express')
+// const express=require('express')
+import express from 'express'
 const app=express();
 
-const dotenv = require("dotenv");
+// const dotenv = require("dotenv");
+import dotenv from 'dotenv'
 const env = dotenv.config().parsed;
 const PORT = process.env.PORT || 4040;
 

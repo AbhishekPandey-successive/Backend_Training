@@ -1,4 +1,4 @@
-import {Geolocation} from '../service/userGeolocation.js'
+import {Geolocation} from '../../service/userGeolocation.js'
 
 const ls= new Geolocation()
 

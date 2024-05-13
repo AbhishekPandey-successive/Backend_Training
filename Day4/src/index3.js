@@ -1,10 +1,12 @@
 // Implement an error-handling middleware that captures errors thrown in the route handlers and sends an appropriate error response.
 
 
-const express=require('express')
-const app=require()
+// const express=require('express')
+import express from 'express'
+const app=express()
 
-const dotenv = require("dotenv");
+// const dotenv = require("dotenv");
+import dotenv from 'dotenv'
 const env = dotenv.config().parsed;
 const PORT = process.env.PORT || 4040;
 

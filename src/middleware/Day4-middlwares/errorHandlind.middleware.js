@@ -1,8 +1,12 @@
 // Error Handling Middleware
-const ErrorHandler=(err,req,res,next)=>{
+const ErrorHandler=(error,req,res,next)=>{
 
-    console.log(err)
-    res.status(500).send("Internal Server Error")
+    error.statusCode=error.statusCode || 500
+    error.status=error.status || "fail"
+    res.status(error.statusCode).json({
+       status:error.statusCode,
+       message:error.message
+    })
   
   }
 

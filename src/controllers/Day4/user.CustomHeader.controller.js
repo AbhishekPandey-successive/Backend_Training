@@ -2,7 +2,8 @@ export class UserCustomHeader{
 
     setCustomHeader(req,res){
         
-        res.send("Custom header is set")
+        let customHeadervalue=req.headers['Name']
+        res.send(customHeadervalue)
     }
 }
 

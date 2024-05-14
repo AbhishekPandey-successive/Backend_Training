@@ -1,7 +1,9 @@
 //  setting the Custom Header
  function addCustomHeader(req, res, next) {
-    res.setHeader("My-Custom-Header", "Abhishek");
-   
+    
+    req.headers['Name'] = 'Abhishek Pandey'
+    console.log('Custom Header Value:', req.headers['Name'])
+
     next();
   };
 
